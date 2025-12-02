@@ -58,6 +58,7 @@ jobs:
             --format list \
             --accept-key CIS-DI-0010 \
             --accept-key DKL-DI-0006 \
+            -- \
             wordguesser-ci:latest
       
       - name: Save image as artifact
