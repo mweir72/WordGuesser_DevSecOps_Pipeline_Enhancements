@@ -116,7 +116,7 @@ jobs:
             -e RACK_ENV=test -e RAILS_ENV=test \
             -v ${{ github.workspace }}:/app \
             wordguesser-ci:latest \
-            bash -lc "cd / app && bundle exec cucumber"
+            bash -lc 'cd / app && bundle exec cucumber'
 
   lint:
     name: RuboCop Lint
