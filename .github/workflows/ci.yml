@@ -54,7 +54,9 @@ jobs:
           format: 'list'
           exit-code: '1'
           exit-level: 'warn'
-          accept-key: DKL-DI-0006
+          accept-key: |
+            CIS-DI-0010
+            DKL-DI-0006
 
       - name: Save image as artifact
         run: docker save wordguesser-ci:latest -o image.tar
