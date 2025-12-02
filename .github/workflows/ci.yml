@@ -40,9 +40,10 @@ jobs:
         with:
           image-ref: 'wordguesser-ci:latest'
           scan-type: image
+          scanners: vuln
+          vuln-type: 'os,library'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
-          security-checks: vuln
           exit-code: '1'
 
       - name: Check container hardening with Dockle
