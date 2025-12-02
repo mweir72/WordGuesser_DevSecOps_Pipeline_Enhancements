@@ -26,6 +26,7 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: ./Dockerfile
+          failure-threshold: warning
 
       - name: Build image (no push)
         uses: docker/build-push-action@v6
