@@ -53,12 +53,12 @@ jobs:
           docker run --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             goodwithtech/dockle:latest:v0.4.15 \
-              --exit-level error \
-              --exit-code 1 \
-              --format list \
-              --accept-key CIS-DI-0010 \
-              --accept-key DKL-DI-0006 \
-              wordguesser-ci:latest
+            --exit-level error \
+            --exit-code 1 \
+            --format list \
+            --accept-key CIS-DI-0010 \
+            --accept-key DKL-DI-0006 \
+            wordguesser-ci:latest
       
       - name: Save image as artifact
         run: docker save wordguesser-ci:latest -o image.tar
