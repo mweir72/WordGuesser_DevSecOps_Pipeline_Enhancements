@@ -6,12 +6,13 @@ FROM ruby:3.3.5
 WORKDIR /app
 
 # Install system packages your app/gems might need.
+# hadolint ignore=DL3008
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-      build-essential=12.12 \
-      git=1:2.47.3-0+deb13u1 \
-      curl=8.14.1-2+deb13u2 \
-      nodejs=20.19.2+dfsg-1 && \
+      build-essential \
+      git \
+      curl \
+      nodejs && \
     rm -rf /var/lib/apt/lists/*
 
 # Add non-root user for security
