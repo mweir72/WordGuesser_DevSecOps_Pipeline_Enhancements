@@ -52,7 +52,7 @@ jobs:
         run: |
           docker run --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            goodwithtech/dockle:latest:v0.4.15 \
+            goodwithtech/dockle:0.4.15 \
             --exit-level error \
             --exit-code 1 \
             --format list \
