@@ -4,6 +4,13 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build Docker image
@@ -15,6 +22,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./Dockerfile
+
       - name: Build image (no push)
         uses: docker/build-push-action@v6
         with:
@@ -22,6 +34,23 @@ jobs:
           file: ./Dockerfile
           tags: wordguesser-ci:latest
           load: true
+
+      - name: Scan image vulnerabilities with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'wordguesser-ci:latest'
+          scan-type: image
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+          exit-code: '1'
+
+      - name: Check container hardening with Dockle
+        uses: goodwithtech/dockle-action@v0.4.15
+        with:
+          image: 'wordguesser-ci:latest'
+          format: 'list'
+          exit-code: '1'
+          exit-level: 'warn'
 
       - name: Save image as artifact
         run: docker save wordguesser-ci:latest -o image.tar
