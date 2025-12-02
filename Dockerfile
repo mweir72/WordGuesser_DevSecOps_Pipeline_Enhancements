@@ -6,7 +6,13 @@ FROM ruby:3.3
 WORKDIR /app
 
 # Install system packages your app/gems might need.
-RUN apt-get update -y &&     apt-get install -y --no-install-recommends build-essential nodejs git curl &&     rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends \
+      build-essential=12.12 \
+      git=1:2.47.3-0+deb13u1 \
+      curl=8.14.1-2+deb13u2 \
+      nodejs=20.19.2+dfsg-1 && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set environment defaults for development.
 ENV RACK_ENV=development     RAILS_ENV=development     BUNDLE_PATH=/usr/local/bundle
