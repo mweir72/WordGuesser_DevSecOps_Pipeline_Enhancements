@@ -1,6 +1,6 @@
 # Use an official Ruby image with build tools so native gems can compile if needed.
 # You can pin to a specific version for reproducibility, e.g., ruby:3.3.9
-FROM ruby:3.3.5
+FROM ruby:3.3.9
 
 # Create and switch to the app directory inside the image.
 WORKDIR /app
