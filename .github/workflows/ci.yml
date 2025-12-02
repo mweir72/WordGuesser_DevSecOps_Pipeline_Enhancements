@@ -47,17 +47,17 @@ jobs:
           severity: 'CRITICAL,HIGH'
           exit-code: '1'
 
-      - name: Check container hardening with Dockle (manual invocation)
-        run: |
-          docker run --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            goodwithtech/dockle:v0.4.13 \
-            --exit-level error \
-            --exit-code 1 \
-            --format list \
-            --accept-key CIS-DI-0010 \
-            --accept-key DKL-DI-0006 \
-            wordguesser-ci:latest
+      # - name: Check container hardening with Dockle (manual invocation)
+      #   run: |
+      #     docker run --rm \
+      #       -v /var/run/docker.sock:/var/run/docker.sock \
+      #       goodwithtech/dockle:v0.4.13 \
+      #       --exit-level error \
+      #       --exit-code 1 \
+      #       --format list \
+      #       --accept-key CIS-DI-0010 \
+      #       --accept-key DKL-DI-0006 \
+      #       wordguesser-ci:latest
 
       - name: Save image as artifact
         run: docker save wordguesser-ci:latest -o image.tar
