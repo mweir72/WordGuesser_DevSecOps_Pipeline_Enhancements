@@ -1,0 +1,22 @@
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/byebug-12.0.0/ext/byebug
+/Users/michaelweir/.rbenv/versions/3.3.9/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-pppsb4 sitelibdir\=./.gem.20251022-64998-pppsb4 clean
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-pppsb4 sitelibdir\=./.gem.20251022-64998-pppsb4
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-pppsb4 sitelibdir\=./.gem.20251022-64998-pppsb4 install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20251022-64998-pppsb4/byebug
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-pppsb4 sitelibdir\=./.gem.20251022-64998-pppsb4 clean

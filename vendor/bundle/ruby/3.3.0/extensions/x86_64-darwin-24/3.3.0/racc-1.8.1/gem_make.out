@@ -1,0 +1,18 @@
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/michaelweir/.rbenv/versions/3.3.9/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-mrfwdm sitelibdir\=./.gem.20251022-64998-mrfwdm clean
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-mrfwdm sitelibdir\=./.gem.20251022-64998-mrfwdm
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-mrfwdm sitelibdir\=./.gem.20251022-64998-mrfwdm install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20251022-64998-mrfwdm/racc
+
+current directory: /Users/michaelweir/wordguesser/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251022-64998-mrfwdm sitelibdir\=./.gem.20251022-64998-mrfwdm clean
