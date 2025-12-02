@@ -1,6 +1,6 @@
 # Use an official Ruby image with build tools so native gems can compile if needed.
 # You can pin to a specific version for reproducibility, e.g., ruby:3.3.9
-FROM ruby:3.3.9
+FROM ruby:3.3.9-bookworm
 
 # Create and switch to the app directory inside the image.
 WORKDIR /app
@@ -14,6 +14,11 @@ RUN apt-get update -y && \
       curl \
       nodejs && \
     rm -rf /var/lib/apt/lists/*
+
+# Set environment defaults for development.
+ENV RACK_ENV=development \
+    RAILS_ENV=development \
+    BUNDLE_PATH=/usr/local/bundle
 
 # Add non-root user for security
 RUN useradd -m appuser
@@ -36,11 +41,6 @@ RUN chown -R appuser:appuser /app
 
 # Drop privileges
 USER appuser
-
-# Set environment defaults for development.
-ENV RACK_ENV=development \
-    RAILS_ENV=development \
-    BUNDLE_PATH=/usr/local/bundle
 
 # Expose the port (default 9292 for Rack/Sinatra apps).
 EXPOSE 9292
