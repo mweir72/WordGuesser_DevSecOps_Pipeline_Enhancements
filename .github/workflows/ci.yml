@@ -47,7 +47,6 @@ jobs:
           severity: 'CRITICAL,HIGH'
           exit-code: '1'
 
-    
       - name: Check container hardening with Dockle (manual invocation)
         run: |
           docker run --rm \
@@ -58,11 +57,10 @@ jobs:
             --format list \
             --accept-key CIS-DI-0010 \
             --accept-key DKL-DI-0006 \
-            -- \
-            localhost/wordguesser-ci:latest
-      
+            wordguesser-ci:latest
+
       - name: Save image as artifact
-        run: docker save localhost/wordguesser-ci:latest -o image.tar
+        run: docker save wordguesser-ci:latest -o image.tar
 
       - name: Upload image artifact
         uses: actions/upload-artifact@v4
@@ -92,7 +90,7 @@ jobs:
           docker run --rm \
             -e RACK_ENV=test -e RAILS_ENV=test \
             -v ${{ github.workspace }}:/app \
-            localhost/wordguesser-ci:latest \
+            wordguesser-ci:latest \
             bash -lc "bundle exec rspec"
 
   cucumber:
@@ -117,7 +115,7 @@ jobs:
           docker run --rm \
             -e RACK_ENV=test -e RAILS_ENV=test \
             -v ${{ github.workspace }}:/app \
-            localhost/wordguesser-ci:latest \
+            wordguesser-ci:latest \
             bash -lc "bundle exec cucumber"
 
   lint:
