@@ -53,7 +53,7 @@ jobs:
           docker run --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             goodwithtech/dockle:latest \
-              --exit-level warn \
+              --exit-level error \
               --exit-code 1 \
               --format list \
               --accept-key CIS-DI-0010 \
